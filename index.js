@@ -6,20 +6,20 @@ const nay = require('./src/nay');
 const args = meow(
   `
     Usage
-      $ foo <input>
+      $ nay new <bot-name>
 
     Options
-      --rainbow, -r  Include a rainbow
+      --nothing, -n Does nothing
 
     Examples
-      $ foo unicorns --rainbow
-      🌈 unicorns 🌈
+      $ nay new dice-bot
+      Success! Created dice-bot at /Users/riseremi/playground/dice-bot
 `,
   {
     flags: {
-      rainbow: {
+      nothing: {
         type: 'boolean',
-        alias: 'r',
+        alias: 'n',
       },
     },
   },
