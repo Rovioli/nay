@@ -1,0 +1,11 @@
+{
+  "name": "$name",
+  "version": "1.0.0",
+  "description": "Bot app.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "$author",
+  "license": "MIT"
+}

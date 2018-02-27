@@ -1,0 +1,28 @@
+{
+  "name": "nay-cli",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhrachka-dev/nay.git"
+  },
+  "author": "zhrachka-dev",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhrachka-dev/nay/issues"
+  },
+  "homepage": "https://github.com/zhrachka-dev/nay#readme",
+  "dependencies": {
+    "chalk": "^2.3.1",
+    "fs-extra": "^5.0.0",
+    "meow": "^4.0.0",
+    "replace-in-file": "^3.1.1"
+  },
+  "devDependencies": {
+    "prettier": "^1.10.2"
+  }
+}
