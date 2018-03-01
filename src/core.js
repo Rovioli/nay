@@ -4,7 +4,7 @@
  * @type {Map.<Object>}
  * @constant
  */
-const MODULES = new Map();
+const modules = new Map();
 
 /**
  * Registers a new module object, assotiating it with a passed command.
@@ -18,7 +18,7 @@ function registerModule(command, moduleObject) {
   if (moduleObject.onReceive === undefined) {
     return -1; // throw NoOnReceiveMethodException()
   } else {
-    MODULES.add(command, moduleObject);
+    modules.add(command, moduleObject);
   }
 }
 
@@ -29,11 +29,11 @@ function registerModule(command, moduleObject) {
  * @param {string} command - telegram command, associated with a module.
  */ 
 function unregisterModule(command) {
-  let module = MODULES.get(command);
+  let module = modules.get(command);
   if (module.enabled) {
     module.onDisable();
   }
-  MODULES.delete(command);
+  modules.delete(command);
 }
 
 /**
@@ -47,7 +47,7 @@ function unregisterModule(command) {
  * @throws {NoOnReceiveMethodException} - if there is no onReceive() method in the module.
  */
 function handleCommand(command, args) {
-  let module = MODULES.get(command);
+  let module = modules.get(command);
   if (module === undefined) {
     return -1; // throw NoOnReceiveMethodException()
   }
@@ -64,7 +64,7 @@ function handleCommand(command, args) {
  * @param {string} command - telegram command, associated with a module.
  */
 function enableModule(command) {
-  let module = MODULES.get(command);
+  let module = modules.get(command);
   if (!module.enabled) {
     module.onEnable(); // TODO make module.enable set to true by onEnable()?
     module.enabled = true;
@@ -78,7 +78,7 @@ function enableModule(command) {
  * @param {string} command - telegram command, associated with a module.
  */
 function disableModule(command) {
-  let module = MODULES.get(command);
+  let module = modules.get(command);
   if (module.enabled) {
     module.onDisable();
     module.enabled = false;
