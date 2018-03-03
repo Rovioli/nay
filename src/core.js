@@ -84,3 +84,17 @@ function disableModule(command) {
     module.enabled = false;
   }
 }
+
+/**
+ * Enable all existing modules, call their onEnable() lifecycle function.
+ */
+function enableModules() {
+    modules.forEach((module, command) => enableModule(command));
+}
+
+/**
+ * Disable all enabled modules, call their onDisable() lifecycle function.
+ */
+function disableModules() {
+    modules.forEach((module, command) => disableModule(command));
+}
