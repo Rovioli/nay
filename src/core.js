@@ -14,7 +14,7 @@ const modules = new Map();
  * @param {Object} module - a module object to be registered.
  * @throws {NoOnReceiveMethodException} - if there is no onReceive() method in the module.
  */
-function registerModule(command, moduleObject) { 
+function registerModule(command, moduleObject) {
   if (moduleObject.onReceive === undefined) {
     return -1; // throw NoOnReceiveMethodException()
   } else {
@@ -27,7 +27,7 @@ function registerModule(command, moduleObject) {
  * Calls the onDisable() lifecycle function and then removes it.
  *
  * @param {string} command - telegram command, associated with a module.
- */ 
+ */
 function unregisterModule(command) {
   let module = modules.get(command);
   if (module.enabled) {
@@ -89,12 +89,12 @@ function disableModule(command) {
  * Enable all existing modules, call their onEnable() lifecycle function.
  */
 function enableModules() {
-    modules.forEach((module, command) => enableModule(command));
+  modules.forEach((module, command) => enableModule(command));
 }
 
 /**
  * Disable all enabled modules, call their onDisable() lifecycle function.
  */
 function disableModules() {
-    modules.forEach((module, command) => disableModule(command));
+  modules.forEach((module, command) => disableModule(command));
 }
