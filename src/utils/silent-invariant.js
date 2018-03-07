@@ -1,6 +1,6 @@
 module.exports = (condition, message, exitCode = 0) => {
   if (!condition) {
-    console.log(message);
+    console.error(message);
     process.exit(exitCode);
   }
 };
