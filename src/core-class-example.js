@@ -3,7 +3,6 @@ class Module {
     if (!command || typeof command !== 'string') {
       throw Error('Command must be a string.');
     }
-    this.command = command;
     this.enabled = true;
   }
 
