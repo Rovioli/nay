@@ -1,5 +1,5 @@
 class Module {
-  onReceive(sender) {
+  onReceive(sender, args = []) {
     console.log('onReceive');
   }
 
