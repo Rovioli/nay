@@ -6,15 +6,15 @@ class Module {
     this.enabled = true;
   }
 
-  onReceive() {
+  onReceive(sender) {
     console.log('onReceive');
   }
 
-  onEnable() {
+  onEnable(sender) {
     console.log('onEnable');
   }
 
-  onDisable() {
+  onDisable(sender) {
     console.log('onDisable');
   }
 }
