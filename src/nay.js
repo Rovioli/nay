@@ -14,7 +14,7 @@ const highlightBotKeywords = text =>
   text.replace(/(bot|-bot)/g, chalk.underline('$1'));
 
 const nay = ({ input, help }) => {
-  const [command, botName = ''] = input;
+  const [ command, botName = '' ] = input;
   const isBotNameValid = validateBotName(botName);
   invariant(command === 'new', help);
   invariant(
